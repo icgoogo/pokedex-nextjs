@@ -1,0 +1,17 @@
+.abilityContainer {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 100%;
+    justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+}
+
+.abilityBadge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ability {}

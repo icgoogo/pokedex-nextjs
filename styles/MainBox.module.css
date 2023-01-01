@@ -1,0 +1,17 @@
+.mainBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.headingBox {
+    margin-top: 20px;
+    margin-bottom: 16px;
+}
+
+@media (min-width:960px) {
+    .mainBox {}
+
+    .headingBox {}
+}

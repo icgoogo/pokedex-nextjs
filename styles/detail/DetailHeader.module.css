@@ -1,0 +1,9 @@
+.detailBg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.detailImage {
+    margin: 20px;
+}

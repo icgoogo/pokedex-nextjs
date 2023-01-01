@@ -1,0 +1,21 @@
+.characteristicContainer {
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.characteristicBadge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.characteristicProp {
+    font-size: small;
+    margin-top: 8px;
+    color: darkgrey;
+}
