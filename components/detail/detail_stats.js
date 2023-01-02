@@ -37,7 +37,7 @@ export default function DetailStats({ stats }) {
   return (
     <div className={style.statContainer}>
       {stats.map((stat) => {
-        return <StatItem stat={stat} />;
+        return <StatItem stat={stat} key={stat.type} />;
       })}
     </div>
   );
