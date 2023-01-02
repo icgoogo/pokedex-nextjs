@@ -24,6 +24,7 @@ const DetailHeader = ({ id }) => {
         width={200}
         height={200}
         src={image}
+        alt={image}
       />
     </Box>
   );
