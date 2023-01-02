@@ -4,10 +4,10 @@ import Head from "next/head";
 import Link from "next/link";
 import MainBox from "../components/main_box";
 import styles from "../styles/Home.module.css";
+import { getRandomColor } from "../utils/utils";
 
 const inter = Inter({ subsets: ["latin"] });
-export default function Home({ pokeDatas }) {
-  console.log(pokeDatas);
+export default function Home({ pokemons }) {
   return (
     <>
       <Head>
@@ -18,7 +18,7 @@ export default function Home({ pokeDatas }) {
       </Head>
       <main className={styles.main}>
         <Grid container rowSpacing={{ xs: 2, md: 4 }} columnSpacing={4}>
-          {pokeDatas.map((pokeData) => {
+          {pokemons.map((pokeData) => {
             return (
               <Grid item xs={6} md={12} key={pokeData.id}>
                 <Link href={`/pokemon/${pokeData.id}`}>
@@ -33,28 +33,29 @@ export default function Home({ pokeDatas }) {
   );
 }
 
-export let pokeDatas = [];
-
 export async function getStaticProps() {
   const res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=100");
   const data = await res.json();
+  if (!data) {
+    return;
+    ("Pokemon not found");
+  }
+
+  let pokemons = [];
   for (let i = 0; i < data.results.length; i++) {
-    pokeDatas.push({
+    pokemons.push({
       id: i + 1,
       imgSrc: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${
         i + 1
       }.png`,
       pokeName: data.results[i].name,
+      bgColor: getRandomColor(),
     });
   }
 
-  if (!data) {
-    return;
-    ("Pokemon not found");
-  }
   return {
     props: {
-      pokeDatas,
+      pokemons,
     },
   };
 }

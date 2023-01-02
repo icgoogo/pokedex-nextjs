@@ -1,0 +1,28 @@
+.statContainer {
+    width: 100%;
+}
+
+.statItem {
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    flex-direction: row;
+}
+
+.statItemType {
+    width: 15%;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.statItemBar {
+    flex-grow: 1;
+    margin-right: 20px;
+}
+
+.statItemFillBar {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
